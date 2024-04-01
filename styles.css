@@ -45,6 +45,35 @@ header {
 span {
   color: var(--main-color);
 }
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50%;
+  }
+}
+
+/* Blinking cursor */
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
+}
+
+/* Apply animation to the span */
+h3 span {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid #fff; /* blinking cursor */
+  white-space: nowrap;
+  animation: typing 1.5s steps(10, end), blink 0.50s step-end infinite;
+}
+
 .navlist {
   display: flex;
 }
